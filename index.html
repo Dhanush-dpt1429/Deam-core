@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#090613">
+<title>Enchanted Dream Museum</title>
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}
+</script>
+</head>
+<body>
+<main id="app">
+  <canvas id="museum" aria-label="3D museum"></canvas>
+  <div id="loading" class="loading"><div class="moon">✦</div><p>Preparing your dream museum…</p></div>
+  <header class="topbar">
+    <div><span class="eyebrow">A PRIVATE LITTLE UNIVERSE</span><strong id="museumHeading">Enchanted Dream Museum</strong></div>
+    <button id="openEditor" class="icon-button" aria-label="Customize museum">✦</button>
+  </header>
+  <div class="hint" id="hint">Drag to look around · use the arrows to move</div>
+  <div class="bottom-actions">
+    <button id="helpBtn" class="pill">How to explore</button>
+    <button id="editorBtn" class="pill gold">Customize ✦</button>
+  </div>
+  <div class="joysticks" id="joysticks">
+    <div class="joy-wrap"><div class="joy-label">MOVE</div><div id="moveJoy" class="joystick"><div class="joy-knob"></div></div></div>
+    <div class="joy-wrap"><div class="joy-label">LOOK</div><div id="lookJoy" class="joystick"><div class="joy-knob"></div></div></div>
+  </div>
+  <div id="notice" class="notice" role="status"></div>
+  <section id="editor" class="overlay">
+    <div class="panel">
+      <button id="closeEditor" class="close" aria-label="Close customization">×</button>
+      <p class="eyebrow">YOUR GALLERY, YOUR STORY</p>
+      <h1>Customize the museum</h1>
+      <label>Museum name<input id="museumName" maxlength="60" value="Enchanted Dream Museum"></label>
+      <label>Gallery subtitle<input id="museumSubtitle" maxlength="100" value="A little world of treasured moments"></label>
+      <div class="section-row"><span>YOUR SIX EXHIBITS</span><small>Changes save in this browser</small></div>
+      <div id="exhibitsForm" class="exhibits-form"></div>
+      <div class="editor-actions">
+        <button id="uploadAll" class="pill">Add / replace a photo</button>
+        <button id="qrBtn" class="pill">▦ Create QR code</button>
+        <button id="saveBtn" class="pill gold">Save changes ✦</button>
+        <button id="publishBtn" class="pill">Export share gallery ↗</button>
+        <button id="enterBtn" class="pill enter">Enter the museum →</button>
+      </div>
+      <div id="qrArea" class="qr-area" hidden></div>
+      <p class="fineprint">To share these exact photos, tap “Export share gallery” and upload the downloaded museum-data.json file to the website repository root. Anyone opening the published link can then see the same gallery. The QR code shares the website link only.</p>
+    </div>
+  </section>
+  <section id="help" class="overlay" hidden>
+    <div class="panel help-panel">
+      <button id="closeHelp" class="close" aria-label="Close help">×</button>
+      <p class="eyebrow">TAKE A LITTLE WALK</p><h1>How to explore</h1>
+      <p><b>Phone:</b> drag anywhere to look around. Use the left joystick to walk and the right joystick to turn your view.</p>
+      <p><b>Computer:</b> use W/A/S/D or arrow keys to move, and drag the mouse to look around.</p>
+      <p>Tap a picture frame to read its title and description. Use “Customize” to change your gallery.</p>
+      <button id="startFromHelp" class="pill gold">Let's go ✦</button>
+    </div>
+  </section>
+</main>
+<input type="file" id="photoPicker" accept="image/*" hidden>
+<script type="module" src="./app.js"></script>
+</body></html>
