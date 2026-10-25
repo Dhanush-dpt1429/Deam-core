@@ -2,7 +2,7 @@
 
 A mobile-friendly 3D fantasy museum. Three.js loads from jsDelivr, so an internet connection is required.
 
-## Make your girlfriend see the same photos from the link
+## Make your friend see the same photos from the link
 
 Your uploaded photos are currently stored in your browser. To publish them for everyone who opens your website:
 
